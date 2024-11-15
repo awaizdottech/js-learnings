@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Select some text in the paragraph below:</p>
+    <p id="selectedText">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+    <script>
+      // Get the paragraph element
+      const paragraph = document.getElementById("selectedText");
+
+      // Add an event listener for text selection
+      paragraph.addEventListener("mouseup", highlightSelectedText);
+
+      // Function to apply styles to the selected text
+      function highlightSelectedText() {
+        console.log(window.getSelection().toString());
+        const selection = window.getSelection().toString();
+
+        if (selection) {
+          const range = window.getSelection().getRangeAt(0);
+          const newNode = document.createElement("span");
+          newNode.classList.add("highlight");
+          range.surroundContents(newNode);
+        }
+      }
+    </script>
+  </body>
+</html>
