@@ -70,7 +70,14 @@ const bad = function () {
 };
 console.log(this); // in node its empty but in browser its the window object
 const add = (n, m) => ({ n: m }); // no need to write return, this is called implicit return
+
 // immediately invoked function expressions -IIFE: used to avoid pollution from global scope & its variables
 ((yo) => {
   console.log(yo);
 })("hi"); // without this seim colon another iife wont run after this
+
+Boolean([]); //true, similarly {} & functions
+
+// Nullish Coalescing operator ?? null undefined
+const yo = null ?? 10; // will be 10
+const i = null ?? 10 ?? 20; // will be 10
