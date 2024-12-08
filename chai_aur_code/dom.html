@@ -26,6 +26,8 @@
     const div = document.createElement("div");
     // div.innerText='chai aur code' // over rides
     const addText = document.createTextNode("chai aur code");
-    div.appendChild(addText); // doesnt over ride
+    div.appendChild(addText); // doesnt over ride & is more optimised
+    parent.replaceWith(document.createElement("section"));
+    parent.remove(); // check if all children are also removed
   </script>
 </html>

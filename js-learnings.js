@@ -54,7 +54,7 @@ let htmlCollection = document.getElementsByClassName("class"); // similarly getE
 let htmlCollectionMethods = ["item", "namedItem"];
 Array.from(htmlCollection); //converting to array
 h1.innerText += " by"; // it can also be used to just view text thats not hidden by any css. For hidden content we use textContent
-h1.innerHTML += " <em>~ME<em>"; // and this to view HTML, textContent works similar to textContent
+h1.innerHTML += " <em>~ME<em>"; // and this to view HTML, traverses the whole dom tree, not optimised. we also have outerHTML but that works a little differently
 h1.setAttribute("class", "class1 class2 class3"); // alters or creates attributes
 h1.style.color = "turquoise"; // just .style to view all styles and '' to delete that style
 h1.classList.add("class4"); // similarly remove to delete and toggle to switch class

@@ -16,3 +16,4 @@ for (const key in obj) console.log(obj[key]); //not possible as Maps arent itera
 
 const obj = { js: "javascript", py: "python" };
 for (const key in obj) console.log(obj[key]);
+for (const [key, value] of obj) console.log(key, value); // check if it works
